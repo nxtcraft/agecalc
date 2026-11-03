@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9EW10BJGW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R9EW10BJGW');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Age Calculator — Exact Age in Years Months Days | Free Online</title>
+<meta name="description" content="Calculate your exact age in years, months and days. Find next birthday countdown, total days lived, zodiac sign, birth stone and more. Free age calculator online.">
+<link rel="canonical" href="https://nxtcraft.github.io/agecalc/">
+<meta property="og:title" content="Age Calculator — Exact Age in Years Months Days">
+<meta property="og:description" content="Find your exact age, next birthday countdown, total days lived, zodiac sign and more. Free & instant.">
+<meta property="og:url" content="https://nxtcraft.github.io/agecalc/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/agecalc/manifest.json">
+<meta name="theme-color" content="#7c3aed">
+<meta name="mobile-web-app-capable" content="yes">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://nxtcraft.github.io/agecalc/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Calculate exact age in years, months, days. Next birthday countdown, zodiac sign, total days lived."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my exact age?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth and the calculator gives your exact age in years, months and days — accounting for leap years and varying month lengths."}},{"@type":"Question","name":"How many days have I been alive?","acceptedAnswer":{"@type":"Answer","text":"The age calculator shows your total days lived, total weeks, total months and total hours since birth."}},{"@type":"Question","name":"What is my zodiac sign?","acceptedAnswer":{"@type":"Answer","text":"Zodiac signs are based on birth month and day. For example, if born between March 21 – April 19, your sign is Aries ♈."}}]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#faf5ff;color:#1e1b4b;min-height:100vh}
+:root{--accent:#7c3aed;--light:#ede9fe;--surface:#fff;--border:#e9d5ff;--muted:#6b7280;--text:#1e1b4b}
+nav{background:var(--accent);padding:0 20px;height:54px;display:flex;align-items:center}
+.nav-logo{color:#fff;font-weight:800;font-size:18px;text-decoration:none}
+.nav-logo span{background:rgba(255,255,255,.25);padding:2px 7px;border-radius:6px;margin-right:6px}
+.container{max-width:700px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:28px;font-weight:800;margin-bottom:6px}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:15px;margin-bottom:24px}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(124,58,237,.07);margin-bottom:20px}
+.card h2{font-size:16px;font-weight:700;margin-bottom:16px;color:var(--accent)}
+
+.input-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.field{flex:1;min-width:180px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.field input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;background:var(--surface);color:var(--text);outline:none}
+.field input:focus{border-color:var(--accent)}
+.btn{padding:11px 24px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.btn:hover{opacity:.88}
+.btn-sec{background:var(--surface);border:1.5px solid var(--border);color:var(--text)}
+.btn-sec:hover{border-color:var(--accent);color:var(--accent);opacity:1}
+
+/* Main result */
+.age-hero{text-align:center;padding:20px 0 12px}
+.age-big{font-size:52px;font-weight:800;color:var(--accent);line-height:1}
+.age-sub{font-size:16px;color:var(--muted);margin-top:6px}
+
+/* Stats grid */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:16px}
+.stat{background:var(--light);border-radius:12px;padding:14px 16px;text-align:center}
+.stat-val{font-size:22px;font-weight:800;color:var(--accent)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Info row */
+.info-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:16px}
+.info-item{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--light);border-radius:10px;font-size:14px}
+.info-item .icon{font-size:22px;flex-shrink:0}
+.info-item .detail{line-height:1.4}
+.info-item .detail strong{display:block;font-size:13px;font-weight:700}
+.info-item .detail span{font-size:12px;color:var(--muted)}
+
+/* Countdown */
+.countdown{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border-radius:16px;padding:18px 20px;margin-top:16px;display:flex;align-items:center;gap:14px}
+.countdown .cake{font-size:32px}
+.countdown .info{flex:1}
+.countdown .info strong{font-size:15px;font-weight:700;display:block}
+.countdown .info span{font-size:13px;opacity:.85}
+.countdown .days{font-size:28px;font-weight:800}
+
+/* On-date section */
+#resultSection{display:none}
+.seo{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.seo h2{font-size:17px;font-weight:700;margin-bottom:10px}
+.seo p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+footer{text-align:center;padding:20px;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="https://nxtcraft.github.io/"><span>🎂</span>AgeCalc</a></nav>
+
+<div class="container">
+  <h1>Age <span>Calculator</span></h1>
+  <p class="sub">Find your exact age, next birthday countdown, zodiac sign, total days lived and more.</p>
+
+  <div class="card">
+    <h2>Your Date of Birth</h2>
+    <div class="input-row">
+      <div class="field">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" max="" onchange="calculate()">
+      </div>
+      <div class="field">
+        <label>Age on Date (optional)</label>
+        <input type="date" id="targetDate" onchange="calculate()">
+      </div>
+      <button class="btn" onclick="calculate()">Calculate</button>
+    </div>
+  </div>
+
+  <div id="resultSection">
+    <div class="card">
+      <h2>Your Exact Age</h2>
+      <div class="age-hero">
+        <div class="age-big" id="ageYears"></div>
+        <div class="age-sub" id="ageDetail"></div>
+      </div>
+      <div class="stats" id="statsGrid"></div>
+      <div class="countdown" id="countdownBox"></div>
+      <div class="info-row" id="infoRow"></div>
+    </div>
+  </div>
+
+  <div class="seo">
+    <h2>About This Age Calculator</h2>
+    <p>This calculator computes your <strong>exact age</strong> accounting for leap years, varying month lengths (28/29/30/31 days) and the precise number of days. Unlike simple year subtraction, it gives you years + months + remaining days.</p>
+    <p>It also shows your <strong>total days lived</strong> (great for "I'm 10,000 days old today" celebrations), next birthday countdown, zodiac sign, and birth stone.</p>
+    <h2>Frequently Asked Questions</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+      <div><strong>How is exact age calculated?</strong><p style="font-size:14px;color:var(--muted);margin-top:4px">The calculator finds years by checking if this year's birthday has passed. Then counts remaining months, then remaining days — always using actual calendar month lengths.</p></div>
+      <div><strong>What if I was born on Feb 29 (leap day)?</strong><p style="font-size:14px;color:var(--muted);margin-top:4px">In non-leap years, your birthday is counted on Feb 28. The calculator handles this automatically.</p></div>
+      <div><strong>Can I calculate age on a past or future date?</strong><p style="font-size:14px;color:var(--muted);margin-top:4px">Yes — use the "Age on Date" field. Enter any date and the calculator shows how old you were or will be on that date.</p></div>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 AgeCalc — Free age calculator. No signup.</p></footer>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/agecalc/sw.js");</script>
+
+<script>
+// ─── Reference data ────────────────────────────────────────────────────────
+const ZODIAC = [
+  {name:'Capricorn ♑', start:[12,22], end:[1,19]},
+  {name:'Aquarius ♒',  start:[1,20],  end:[2,18]},
+  {name:'Pisces ♓',    start:[2,19],  end:[3,20]},
+  {name:'Aries ♈',     start:[3,21],  end:[4,19]},
+  {name:'Taurus ♉',    start:[4,20],  end:[5,20]},
+  {name:'Gemini ♊',    start:[5,21],  end:[6,20]},
+  {name:'Cancer ♋',    start:[6,21],  end:[7,22]},
+  {name:'Leo ♌',       start:[7,23],  end:[8,22]},
+  {name:'Virgo ♍',     start:[8,23],  end:[9,22]},
+  {name:'Libra ♎',     start:[9,23],  end:[10,22]},
+  {name:'Scorpio ♏',   start:[10,23], end:[11,21]},
+  {name:'Sagittarius ♐',start:[11,22],end:[12,21]},
+];
+
+const BIRTHSTONES = ['Garnet','Amethyst','Aquamarine','Diamond','Emerald','Pearl','Ruby','Peridot','Sapphire','Opal','Topaz','Turquoise'];
+const DAYS_OF_WEEK = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// ─── Helpers ────────────────────────────────────────────────────────────────
+function daysInMonth(year, month) { // month 1-12
+  return new Date(year, month, 0).getDate();
+}
+
+function exactAge(dob, to) {
+  let years  = to.getFullYear() - dob.getFullYear();
+  let months = to.getMonth()    - dob.getMonth();
+  let days   = to.getDate()     - dob.getDate();
+
+  if (days < 0) {
+    months--;
+    // Days in the previous month of 'to'
+    const prevMonth = to.getMonth() === 0 ? 12 : to.getMonth();
+    const prevYear  = to.getMonth() === 0 ? to.getFullYear() - 1 : to.getFullYear();
+    days += daysInMonth(prevYear, prevMonth);
+  }
+  if (months < 0) { years--; months += 12; }
+  return { years, months, days };
+}
+
+function getZodiac(month, day) { // month 1-12
+  for (const z of ZODIAC) {
+    const [sm, sd] = z.start, [em, ed] = z.end;
+    if (sm > em) { // Capricorn wraps Dec–Jan
+      if ((month === sm && day >= sd) || (month === em && day <= ed)) return z.name;
+    } else {
+      if ((month === sm && day >= sd) || (month === em && day <= ed) ||
+          (month > sm && month < em)) return z.name;
+    }
+  }
+  return '';
+}
+
+function nextBirthday(dob, from) {
+  const thisYear = from.getFullYear();
+  let next = new Date(thisYear, dob.getMonth(), dob.getDate());
+  if (next <= from) next = new Date(thisYear + 1, dob.getMonth(), dob.getDate());
+  // Handle Feb 29
+  if (dob.getMonth() === 1 && dob.getDate() === 29) {
+    // Find next leap year
+    let y = next.getFullYear();
+    while (new Date(y, 1, 29).getDate() !== 29) y++;
+    next = new Date(y, 1, 29);
+  }
+  const diffMs  = next - from;
+  const diffDays = Math.ceil(diffMs / 86400000);
+  return { date: next, days: diffDays, age: next.getFullYear() - dob.getFullYear() };
+}
+
+// ─── Main ───────────────────────────────────────────────────────────────────
+function calculate() {
+  const dobStr = document.getElementById('dob').value;
+  if (!dobStr) return;
+  const dob = new Date(dobStr + 'T00:00:00'); // force local midnight
+  if (isNaN(dob)) return;
+
+  const targetStr = document.getElementById('targetDate').value;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const to = targetStr ? new Date(targetStr + 'T00:00:00') : today;
+
+  if (dob >= to) { alert('Date of birth must be before the target date.'); return; }
+
+  const age = exactAge(dob, to);
+  const totalDays   = Math.floor((to - dob) / 86400000);
+  const totalWeeks  = Math.floor(totalDays / 7);
+  const totalMonths = age.years * 12 + age.months;
+  const totalHours  = totalDays * 24;
+
+  const isToday = to.getTime() === today.getTime();
+  const nextBd  = isToday ? nextBirthday(dob, today) : null;
+
+  // Render
+  document.getElementById('resultSection').style.display = 'block';
+  document.getElementById('ageYears').textContent = age.years + ' years';
+  document.getElementById('ageDetail').textContent =
+    `${age.months} month${age.months !== 1 ? 's' : ''} and ${age.days} day${age.days !== 1 ? 's' : ''}` +
+    (targetStr ? ` on ${to.toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'})}` : '');
+
+  // Stats
+  document.getElementById('statsGrid').innerHTML = [
+    { val: totalDays.toLocaleString('en-IN'),   label: 'Total Days' },
+    { val: totalWeeks.toLocaleString('en-IN'),  label: 'Total Weeks' },
+    { val: totalMonths.toLocaleString('en-IN'), label: 'Total Months' },
+    { val: totalHours.toLocaleString('en-IN'),  label: 'Total Hours' },
+  ].map(s => `<div class="stat"><div class="stat-val">${s.val}</div><div class="stat-label">${s.label}</div></div>`).join('');
+
+  // Countdown (today only)
+  if (isToday && nextBd) {
+    const isTodayBd = nextBd.days === 365 || nextBd.days === 366;
+    const bdToday   = dob.getMonth() === today.getMonth() && dob.getDate() === today.getDate();
+    const msg = bdToday
+      ? `🎉 Happy Birthday! You turn ${age.years} today!`
+      : `${nextBd.days} day${nextBd.days !== 1 ? 's' : ''} until your ${nextBd.age}${ord(nextBd.age)} birthday`;
+    document.getElementById('countdownBox').innerHTML =
+      `<div class="cake">🎂</div><div class="info"><strong>Next Birthday</strong><span>${nextBd.date.toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'})}</span></div><div class="days">${bdToday ? '🎊' : nextBd.days + 'd'}</div>`;
+  } else {
+    document.getElementById('countdownBox').style.display = 'none';
+  }
+
+  // Info row
+  const zodiac = getZodiac(dob.getMonth() + 1, dob.getDate());
+  const stone  = BIRTHSTONES[dob.getMonth()];
+  const dow    = DAYS_OF_WEEK[dob.getDay()];
+  document.getElementById('infoRow').innerHTML = [
+    { icon:'📅', strong: MONTHS[dob.getMonth()] + ' ' + dob.getDate() + ', ' + dob.getFullYear(), span: 'Date of Birth' },
+    { icon:'📆', strong: dow, span: 'Day of Week Born' },
+    { icon:'♋',  strong: zodiac, span: 'Zodiac Sign' },
+    { icon:'💎', strong: stone, span: 'Birth Stone' },
+  ].map(i => `<div class="info-item"><div class="icon">${i.icon}</div><div class="detail"><strong>${i.strong}</strong><span>${i.span}</span></div></div>`).join('');
+
+  document.getElementById('resultSection').scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+
+function ord(n) {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return (s[(v-20)%10] || s[v] || s[0]);
+}
+
+// Set max dob to today, default target to today
+const todayStr = new Date().toISOString().split('T')[0];
+document.getElementById('dob').max = todayStr;
+document.getElementById('targetDate').value = todayStr;
+document.getElementById('targetDate').max = '2100-12-31';
+</script>
+</body>
+</html>
